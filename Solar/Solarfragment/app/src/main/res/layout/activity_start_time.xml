@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/count_time_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartTimeActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background1"
+    >
+
+    <ImageView
+        android:id="@+id/clock_back_left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/back_left"/>
+
+    <LinearLayout
+        android:id="@+id/clock"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="110dp">
+
+        <TextView
+            android:id="@+id/minutes_tv"
+            android:layout_marginTop="15dp"
+            android:layout_width="68dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+
+
+            android:textSize="40sp" />
+        <!--android:textStyle="bold"-->
+
+        <TextView
+            android:id="@+id/colon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/seconds_tv"
+            android:text=":"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/seconds_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="00"
+
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/task_name1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_begin"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/jixu"/>
+        <Button
+            android:id="@+id/zanting"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="66dp"
+            android:background="@drawable/zanting"/>
+        <Button
+            android:id="@+id/stop"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/jieshu"/>
+
+
+
+        />
+    </LinearLayout>
+
+</LinearLayout>

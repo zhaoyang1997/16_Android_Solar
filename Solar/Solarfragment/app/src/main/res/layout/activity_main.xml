@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_userid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/tab1"
+            style="@style/tab_rb_style"
+            android:background="#FFFFFF">
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首页"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab2"
+            style="@style/tab_rb_style"
+            android:background="#FFFFFF">
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab3"
+            style="@style/tab_rb_style"
+            android:background="#FFFFFF">
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数据"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

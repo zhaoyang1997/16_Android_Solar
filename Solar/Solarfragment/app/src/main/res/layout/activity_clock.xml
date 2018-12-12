@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layout_clock"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClockActivity">
+
+    <ImageView
+        android:id="@+id/clock_back_left"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/back_left"/>
+
+    <!--创建很多时钟-->
+
+    <ScrollView
+        android:layout_below="@+id/clock_back_left"
+        android:id="@+id/sv_many_clock"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_below="@+id/clock_back_left"
+            android:id="@+id/many_clock"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <!--需要一个shape文件（在Drawable下）设置圆角-->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_give_up"
+        android:background="@drawable/clock_shape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="GIVE UP"
+        tools:ignore="NotSibling" />
+
+</RelativeLayout>

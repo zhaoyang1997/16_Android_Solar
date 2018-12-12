@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyActivity">
+
+    <ImageView
+        android:id="@+id/iv_back_eft"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/back_left"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp">
+
+        <ImageView
+            android:id="@+id/user_img"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/default1" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="25sp"
+                android:text="Peace"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/integral"/>
+
+                <TextView
+                    android:id="@+id/user_score"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="1758"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_score_details"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/integral_details"/>
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5F9EA0"
+            android:textSize="20sp"
+            android:text="积分详情"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_score_mart"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/integral_mart"/>
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5F9EA0"
+            android:textSize="20sp"
+            android:text="积分商城"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_change_user"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/changeuser"/>
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5F9EA0"
+            android:textSize="20sp"
+            android:text="切换账号"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_zhu_ce"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/zhuce"/>
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5F9EA0"
+            android:textSize="20sp"
+            android:text="注册新用户"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_set_up"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/setup"/>
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5F9EA0"
+            android:textSize="20sp"
+            android:text="设置"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_check_out"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/checkout"/>
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5F9EA0"
+            android:textSize="20sp"
+            android:text="退出"/>
+    </LinearLayout>
+
+
+</LinearLayout>

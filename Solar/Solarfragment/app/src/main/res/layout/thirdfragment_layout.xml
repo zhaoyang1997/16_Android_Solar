@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--数据页面 时间布局-->
+    <Button
+        android:id="@+id/btn"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:text="时间"
+        android:textSize="10sp"
+        android:background="#00000000"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btn"
+        android:layout_toRightOf="@id/btn"
+        android:text="应用"
+        android:textSize="10sp"
+        android:background="#00000000"/>
+
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/btn">
+        <ImageView
+            android:layout_alignLeft="@id/week"
+            android:layout_marginLeft="10dp"
+            android:layout_alignTop="@id/week"
+            android:layout_marginTop="13dp"
+            android:layout_width="150dp"
+            android:layout_height="5dp"
+            android:src="@drawable/select"/>
+        <Button
+            android:layout_marginLeft="100dp"
+            android:id="@+id/week"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/point_out"/>
+
+        <Button
+            android:layout_toRightOf="@id/week"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/month"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/point_out"/>
+        <Button
+            android:id="@+id/year"
+            android:layout_toRightOf="@id/month"
+            android:layout_marginLeft="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/point_out"/>
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/week"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@id/week"
+            android:text="周"/>
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/month"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@id/month"
+            android:text="月"/>
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/year"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@id/year"
+            android:text="年"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_below="@id/btn"
+        android:layout_marginTop="60dp">
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_below="@id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/star_green"
+            android:layout_marginLeft="30dp"/>
+        <TextView
+            android:id="@+id/title1"
+            android:layout_toRightOf="@id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="过去一周"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_alignLeft="@id/star"
+            android:layout_below="@id/star"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="专注了0个番茄时间"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_alignLeft="@id/star"
+            android:layout_below="@id/tv1"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完成了0个任务"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_alignLeft="@id/star"
+            android:layout_below="@id/tv2"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未完成0个任务"
+            android:textSize="20sp"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

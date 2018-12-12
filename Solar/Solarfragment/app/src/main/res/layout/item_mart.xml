@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="160dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:foregroundGravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/iv_bgimg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/btn_buy_state"
+            android:visibility="gone"
+            android:background="@drawable/shape"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="购买"/>
+
+    </FrameLayout>
+
+    <!--控件隐藏-->
+    <!--android:visibility="gone"-->
+
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/integral" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="5dp"
+            android:text=""
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

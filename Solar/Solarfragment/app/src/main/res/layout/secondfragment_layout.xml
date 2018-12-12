@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:background="@drawable/task"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="26sp"/>
+            <ImageView
+                android:id="@+id/jiahao"
+                android:src="@drawable/jiahao"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="190dp"/>
+            <ImageView
+                android:src="@drawable/setup"
+                android:layout_width="30dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/lv_tasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </ListView>
+</LinearLayout>
