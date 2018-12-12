@@ -2,37 +2,38 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
-Source Server Version : 50506
+Source Server Version : 50719
 Source Host           : localhost:3306
-Source Database       : solar
+Source Database       : solar1.4
 
 Target Server Type    : MYSQL
-Target Server Version : 50506
+Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2018-12-10 14:49:29
+Date: 2018-12-12 16:31:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `buy`
+-- Table structure for buy
 -- ----------------------------
 DROP TABLE IF EXISTS `buy`;
 CREATE TABLE `buy` (
   `user_id` int(100) NOT NULL,
-  `images_id` int(100) NOT NULL
+  `images_id` int(100) NOT NULL,
+  `image_url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of buy
 -- ----------------------------
-INSERT INTO `buy` VALUES ('3', '1');
-INSERT INTO `buy` VALUES ('3', '2');
-INSERT INTO `buy` VALUES ('3', '3');
+INSERT INTO `buy` VALUES ('3', '1', null);
+INSERT INTO `buy` VALUES ('3', '2', null);
+INSERT INTO `buy` VALUES ('3', '3', null);
 
 -- ----------------------------
--- Table structure for `count`
+-- Table structure for count
 -- ----------------------------
 DROP TABLE IF EXISTS `count`;
 CREATE TABLE `count` (
@@ -53,7 +54,7 @@ CREATE TABLE `count` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `images`
+-- Table structure for images
 -- ----------------------------
 DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
@@ -73,7 +74,7 @@ INSERT INTO `images` VALUES ('4', 'http://10.7.89.78:8080/data_get/images/bg7.pn
 INSERT INTO `images` VALUES ('5', 'http:/10.7.89.241:8080/MySolar/images/bg20.png', '199');
 
 -- ----------------------------
--- Table structure for `manager`
+-- Table structure for manager
 -- ----------------------------
 DROP TABLE IF EXISTS `manager`;
 CREATE TABLE `manager` (
@@ -89,7 +90,7 @@ CREATE TABLE `manager` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `picture`
+-- Table structure for picture
 -- ----------------------------
 DROP TABLE IF EXISTS `picture`;
 CREATE TABLE `picture` (
@@ -115,7 +116,7 @@ INSERT INTO `picture` VALUES ('9', 'http://10.7.89.241:8080/MySolar/images/bg10.
 INSERT INTO `picture` VALUES ('10', 'http://10.7.89.241:8080/MySolar/images/bg11.png', '溜溜溜溜');
 
 -- ----------------------------
--- Table structure for `score_detail`
+-- Table structure for score_detail
 -- ----------------------------
 DROP TABLE IF EXISTS `score_detail`;
 CREATE TABLE `score_detail` (
@@ -134,7 +135,7 @@ CREATE TABLE `score_detail` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `sing`
+-- Table structure for sing
 -- ----------------------------
 DROP TABLE IF EXISTS `sing`;
 CREATE TABLE `sing` (
@@ -154,7 +155,7 @@ INSERT INTO `sing` VALUES ('4', 'http://www.haolingsheng.com/lingsheng/h9x2gt.ht
 INSERT INTO `sing` VALUES ('5', 'http://www.haolingsheng.com/lingsheng/phltnf.htm', '体面');
 
 -- ----------------------------
--- Table structure for `task`
+-- Table structure for task
 -- ----------------------------
 DROP TABLE IF EXISTS `task`;
 CREATE TABLE `task` (
@@ -192,7 +193,7 @@ INSERT INTO `task` VALUES ('高考模拟英语完型一篇', '15', '未完成', 
 INSERT INTO `task` VALUES ('两篇六级仔细阅读', '16', '未完成', '25', '1', '2018', '12', '07', '1', '0');
 
 -- ----------------------------
--- Table structure for `tomato`
+-- Table structure for tomato
 -- ----------------------------
 DROP TABLE IF EXISTS `tomato`;
 CREATE TABLE `tomato` (
@@ -214,7 +215,7 @@ INSERT INTO `tomato` VALUES ('4', '1', '2', '2018', '7', '1');
 INSERT INTO `tomato` VALUES ('5', null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (

@@ -59,7 +59,8 @@ public class ImgDao {
 		  return false;
 	
 	}
-//得到产品的数量
+	
+	//得到产品的数量
 	public int getImageNum() {
 		int num = 0;
 		List<ImageBean> List = new ArrayList<ImageBean>();
@@ -78,115 +79,147 @@ public class ImgDao {
 		}
 		return num;
 	}
-//更新删除后的id
-public boolean update(int id) {
-	boolean b=false;
-	Connection conn = Datebase.getConnection();
+		
+	//更新删除后的id
+	public boolean update(int id) {
+		boolean b=false;
+		Connection conn = Datebase.getConnection();
+	
+		java.sql.PreparedStatement pstmt = null;
+		String sql = "update images set images_id=images_id-1 where images_id>?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+		    pstmt.setInt(1, id);
+		    int num=pstmt.executeUpdate();
+		    if(num>0) {
+		    	return true;
+		    }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return b;
+	}
+	
+	//根据id删除任务
+	public boolean DeleteImageById(int id) {
+		boolean b=false;
+		Connection conn = Datebase.getConnection();
 
+		java.sql.PreparedStatement pstmt = null;
+		String sql = "delete from images where images_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+		    pstmt.setInt(1, id);
+		    int num=pstmt.executeUpdate();
+		    if(num>0) {
+		    	return true;
+		    }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return b;
+	}
+
+	/**
+	* 查询所有的壁纸
+	*/
+	public List<ImageBean> getAllImage() {
+	List<ImageBean> ImageList = new ArrayList<ImageBean>();
+	Connection conn = Datebase.getConnection();
+	ResultSet rs = null;
 	java.sql.PreparedStatement pstmt = null;
-	String sql = "update images set images_id=images_id-1 where images_id>?";
+	String sql = "select images_id,images_src,images_score from images";
 	try {
 		pstmt = conn.prepareStatement(sql);
-	    pstmt.setInt(1, id);
-	    int num=pstmt.executeUpdate();
-	    if(num>0) {
-	    	return true;
-	    }
+		rs = pstmt.executeQuery();
+	
+	
+		while (rs.next()) {
+			ImageBean image = new ImageBean(
+					rs.getInt("images_id"),
+					rs.getString("images_src"),
+					rs.getInt("images_score")
+					);
+			ImageList.add(image);
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return ImageList;
+	}
+
+	//修改路径
+	public boolean updateUrl(String url, int imageid) {
+	boolean b=false;
+	Connection conn = Datebase.getConnection();
+	java.sql.PreparedStatement pstmt = null;
+	try {
+		String sql="update images set images_src=? where images_id=?";
+		pstmt=conn.prepareStatement(sql);
+		pstmt.setString(1, url);
+		pstmt.setInt(2, imageid);
+		int num=pstmt.executeUpdate();
+		if(num>0) {
+			return true;
+		}
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	return b;
-}
-//根据id删除任务
-		public boolean DeleteImageById(int id) {
-			boolean b=false;
-			Connection conn = Datebase.getConnection();
+	}
 
-			java.sql.PreparedStatement pstmt = null;
-			String sql = "delete from images where images_id=?";
-			try {
-				pstmt = conn.prepareStatement(sql);
-			    pstmt.setInt(1, id);
-			    int num=pstmt.executeUpdate();
-			    if(num>0) {
-			    	return true;
-			    }
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return b;
+	//修改积分
+	public boolean updateScore(int imagescore, int imageid) {
+	boolean b=false;
+	Connection conn = Datebase.getConnection();
+	java.sql.PreparedStatement pstmt = null;
+	try {
+		String sql="update images set images_score=? where images_id=?";
+		pstmt=conn.prepareStatement(sql);
+		pstmt.setInt(1, imagescore);
+		pstmt.setInt(2, imageid);
+		int num=pstmt.executeUpdate();
+		if(num>0) {
+			return true;
 		}
-
-/**
-* 查询所有的壁纸
-*/
-public List<ImageBean> getAllImage() {
-List<ImageBean> ImageList = new ArrayList<ImageBean>();
-Connection conn = Datebase.getConnection();
-ResultSet rs = null;
-java.sql.PreparedStatement pstmt = null;
-String sql = "select images_id,images_src,images_score from images";
-try {
-	pstmt = conn.prepareStatement(sql);
-	rs = pstmt.executeQuery();
-
-
-	while (rs.next()) {
-		ImageBean image = new ImageBean(
-				rs.getInt("images_id"),
-				rs.getString("images_src"),
-				rs.getInt("images_score")
-				);
-		ImageList.add(image);
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
-} catch (SQLException e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
-return ImageList;
-}
-//修改路径
-public boolean updateUrl(String url, int imageid) {
-boolean b=false;
-Connection conn = Datebase.getConnection();
-java.sql.PreparedStatement pstmt = null;
-try {
-	String sql="update images set images_src=? where images_id=?";
-	pstmt=conn.prepareStatement(sql);
-	pstmt.setString(1, url);
-	pstmt.setInt(2, imageid);
-	int num=pstmt.executeUpdate();
-	if(num>0) {
-		return true;
+	return b;
 	}
-} catch (SQLException e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
-return b;
-}
-//修改积分
-public boolean updateScore(int imagescore, int imageid) {
-boolean b=false;
-Connection conn = Datebase.getConnection();
-java.sql.PreparedStatement pstmt = null;
-try {
-	String sql="update images set images_score=? where images_id=?";
-	pstmt=conn.prepareStatement(sql);
-	pstmt.setInt(1, imagescore);
-	pstmt.setInt(2, imageid);
-	int num=pstmt.executeUpdate();
-	if(num>0) {
-		return true;
+	
+	/**
+	 * 从buy表中中查询用户对当前壁纸兑换状态
+	 * @param userId
+	 * @param ImgId
+	 * @return
+	 */
+	public String SelectBought(int userId,int ImgId) {
+		Connection conn = Datebase.getConnection();
+		java.sql.PreparedStatement pstmt = null;
+		String sql = "select user_id,images_id from buy where user_id=? and images_id=?";
+		ResultSet resultSet = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userId);
+			pstmt.setInt(2,ImgId);
+			resultSet = pstmt.executeQuery();
+			while(resultSet.next()) {
+				return "AlreadyBought";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+		return "NotBought";
+		
 	}
-} catch (SQLException e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
-return b;
-}
 
 
 }
