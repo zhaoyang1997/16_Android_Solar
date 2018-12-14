@@ -250,7 +250,7 @@ public class SecondFragment extends Fragment {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             dialog.dismiss();
-listView.removeViewAt(position);
+
                                             //根据TaskId去数据库中删
                                             //启动一个子线程将数据库中数据也删除
                                             new Thread(){
