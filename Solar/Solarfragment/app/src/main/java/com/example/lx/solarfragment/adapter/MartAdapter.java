@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import com.example.lx.solarfragment.MainActivity;
 import com.example.lx.solarfragment.MartActivity;
 import com.example.lx.solarfragment.MyActivity;
 import com.example.lx.solarfragment.R;
@@ -95,7 +95,7 @@ public class MartAdapter extends BaseAdapter {
                 imageId = myImgs.get(position).getId();
                 imageScore = myImgs.get(position).getPrice();
                 imageUrl = myImgs.get(position).getImageUrl();
-                userId = MyActivity.USER_ID;
+                userId = MainActivity.USER_ID;
                 BuyStateTask buyStateTask = new BuyStateTask();
                 buyStateTask.execute();
 

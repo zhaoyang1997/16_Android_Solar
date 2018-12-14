@@ -1,5 +1,6 @@
 package com.example.lx.solarfragment.fragment;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.lx.solarfragment.MainActivity;
 import com.example.lx.solarfragment.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -39,6 +39,7 @@ public class SixthFragment extends BaseFragment {
     private Button btn;
     private Button btnWeek;
     private Button btnMonth;
+    private Button btnYear;
     private static LineChart chart;
     private TextView textView;
     private static int userId;
@@ -47,6 +48,7 @@ public class SixthFragment extends BaseFragment {
     private static TextView tv2;
     private static TextView tv3;
 
+    @SuppressLint("ResourceAsColor")
     public View initView(){
         if(view==null){
             view=View.inflate(mainActivity, R.layout.thirdfragment_layout,null);
@@ -54,8 +56,9 @@ public class SixthFragment extends BaseFragment {
             tv2=view.findViewById(R.id.tv2);
             tv3=view.findViewById(R.id.tv3);
             btn=(Button) view.findViewById(R.id.btn2);
+            btnYear=view.findViewById(R.id.year);
+            btnYear.setBackgroundResource(R.drawable.sun3);
             Button btnTime=view.findViewById(R.id.btn);
-            btnTime.setTextColor(Color.GREEN);
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

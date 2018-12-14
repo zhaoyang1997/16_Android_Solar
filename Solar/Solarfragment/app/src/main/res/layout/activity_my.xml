@@ -7,13 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".MyActivity">
 
-    <ImageView
-        android:id="@+id/iv_back_eft"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:src="@drawable/back_left"/>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#000">
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/iv_back_eft"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/left"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:text=" S O L A R"/>
+    </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="84dp">
 
@@ -34,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
+                android:textColor="#000"
                 android:textSize="25sp"
                 android:text="Peace"/>
 
@@ -42,11 +58,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/integral"/>
+                    android:src="@drawable/us"/>
 
                 <TextView
                     android:id="@+id/user_score"
@@ -54,6 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
+                    android:textColor="#000"
                     android:text="1758"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -66,19 +83,33 @@
         android:layout_marginTop="15dp"
         android:layout_marginLeft="25dp"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/integral_details"/>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="积分详情"/>
+        </LinearLayout>
+
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/integral_details"/>
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#5F9EA0"
-            android:textSize="20sp"
-            android:text="积分详情"/>
+            android:layout_marginRight="20dp"
+            android:src="@drawable/back_right" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -86,19 +117,35 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="25dp"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/integral_mart"/>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="积分商城"/>
+
+        </LinearLayout>
+
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/integral_mart"/>
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#5F9EA0"
-            android:textSize="20sp"
-            android:text="积分商城"/>
+            android:layout_marginRight="20dp"
+            android:src="@drawable/back_right" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -106,19 +153,35 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="25dp"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/changeuser"/>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="切换账号"/>
+
+        </LinearLayout>
+
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/changeuser"/>
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#5F9EA0"
-            android:textSize="20sp"
-            android:text="切换账号"/>
+            android:layout_marginRight="20dp"
+            android:src="@drawable/back_right" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -126,19 +189,35 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="25dp"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/zhuce"/>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="注册新用户"/>
+
+        </LinearLayout>
+
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/zhuce"/>
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#5F9EA0"
-            android:textSize="20sp"
-            android:text="注册新用户"/>
+            android:layout_marginRight="20dp"
+            android:src="@drawable/back_right" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -146,19 +225,35 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="25dp"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/setup"/>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="设置"/>
+
+        </LinearLayout>
+
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/setup"/>
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#5F9EA0"
-            android:textSize="20sp"
-            android:text="设置"/>
+            android:layout_marginRight="20dp"
+            android:src="@drawable/back_right" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -166,19 +261,34 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="25dp"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/checkout"/>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="退出"/>
+
+        </LinearLayout>
+
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/checkout"/>
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#5F9EA0"
-            android:textSize="20sp"
-            android:text="退出"/>
+            android:layout_marginRight="20dp"
+            android:src="@drawable/back_right" />
     </LinearLayout>
 
 

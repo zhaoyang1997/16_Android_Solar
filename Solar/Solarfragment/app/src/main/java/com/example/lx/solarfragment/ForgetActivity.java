@@ -36,7 +36,7 @@ public class ForgetActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.et_email);
         tvName = findViewById(R.id.tv_name);
         button = findViewById(R.id.btn);
-        btnBack=findViewById(R.id.btn_back);
+        btnBack=findViewById(R.id.clock_back_left);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

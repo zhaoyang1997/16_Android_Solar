@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:id="@+id/ll_temp_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="任务"
+                android:textColor="#000"
+                android:layout_marginLeft="20dp"
+                android:textSize="26sp"/>
+
+            <ImageView
+                android:id="@+id/jiahao"
+                android:src="@drawable/add2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="190dp"/>
+
+            <ImageView
+                android:id="@+id/setup"
+                android:src="@drawable/setup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+
+    <ListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_below="@+id/ll_temp_top"
+        android:id="@+id/lv_tasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/tab1"
+            style="@style/tab_rb_style"
+            android:background="#FFFFFF">
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/index_out"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首页"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab2"
+            style="@style/tab_rb_style"
+            android:background="#FFFFFF">
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/strategy"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab3"
+            style="@style/tab_rb_style"
+            android:background="#FFFFFF">
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/quotation_out"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数据"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

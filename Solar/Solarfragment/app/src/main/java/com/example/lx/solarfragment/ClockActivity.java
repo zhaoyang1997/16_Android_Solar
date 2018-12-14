@@ -38,7 +38,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ClockActivity extends AppCompatActivity {
 
-    private int userId = MyActivity.USER_ID;
+    private int userId = MainActivity.USER_ID;
     private TomatoTask tomatoTask = new TomatoTask();
     private LinearLayout manyClock;
     private ImageView backIV;

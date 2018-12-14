@@ -2,23 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg1"
     android:orientation="vertical">
+
     <LinearLayout
+        android:id="@+id/temp_ll"
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="45dp"
+        android:background="#000">
+
         <Button
-            android:id="@+id/btn_back"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/clock_back_left"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/back_left"/>
+            android:background="@drawable/left"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:text=" S O L A R"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,65 +37,69 @@
             android:layout_marginLeft="30dp"
             android:text="请回答密保问题"
             android:textSize="30sp"
-            android:textColor="#FFFFFF"
-            />
+            android:textColor="#000" />
+
     </LinearLayout>
+
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
         android:orientation="vertical"
-        android:layout_marginTop="60dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="用户名："
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"/>
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp">
+
         <EditText
             android:id="@+id/et_name"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:textColor="#FFFFFF"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="手机号："
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/circle_shape"
+            android:textSize="20sp"
+            android:hint="用户名"
+            android:textColorHint="#808080"/>
+
         <EditText
             android:id="@+id/et_phone"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:textColor="#FFFFFF"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="邮箱："
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/circle_shape"
+            android:textSize="20sp"
+            android:hint="手机号"
+            android:textColorHint="#808080"/>
+
         <EditText
             android:id="@+id/et_email"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:textColor="#FFFFFF"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/circle_shape"
+            android:textSize="20sp"
+            android:hint="邮箱"
+            android:textColorHint="#808080"/>
+
     </LinearLayout>
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#FF4500"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_name"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#000"/>-->
+
     <Button
         android:id="@+id/btn"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
-        android:text="确定"
-        android:textSize="25sp"
-        android:textColor="#6c6c6c"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="确 定"
+        android:textSize="30sp"
+        android:background="@drawable/btn_style"
+        android:textColor="#000"
         />
+
 </LinearLayout>

@@ -1,12 +1,10 @@
 package com.example.lx.solarfragment;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,9 +16,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,12 +31,14 @@ import java.util.List;
 
 public class IntegralActivity extends AppCompatActivity {
 
-    private ImageView ivImage;
     private TextView tvScore;
     List<Goods> list = new ArrayList<>();
-    private Button btnBack;
+    private ImageView btnBack;
     private String lname;
     private int userId;
+    private int score;
+    private int num1;
+    private int num2;
 
 
     @Override
@@ -44,15 +47,15 @@ public class IntegralActivity extends AppCompatActivity {
         setContentView(R.layout.activity_integral);
         userId=getIntent().getIntExtra("userId",0);
         lname=getIntent().getStringExtra("username");
-        btnBack=findViewById(R.id.btn_back);
+
+        btnBack = findViewById(R.id.iv_back_eft);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 IntegralActivity.this.finish();
-
             }
         });
-        ivImage = findViewById(R.id.iv_image);
+
         tvScore = findViewById(R.id.tv_score);
         ScoreDetailTask scoreDetailTask = new ScoreDetailTask();
         scoreDetailTask.execute();
@@ -68,11 +71,25 @@ public class IntegralActivity extends AppCompatActivity {
         protected List<Goods> doInBackground(Object[] objects) {
 
             try {
-                URL url = new URL("http://10.7.89.189:8080/Solar/ScoreDetailServlet");
+                URL url = new URL("http://10.7.89.37:8080/Solar/ScoreDetailServlet");
                 HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-                connection.setRequestMethod("GET");
+                connection.setRequestMethod("POST");
                 connection.setRequestProperty("contentType","UTF-8");
 
+                OutputStream os=connection.getOutputStream();
+                OutputStreamWriter opw=new OutputStreamWriter(os);
+                BufferedWriter writer=new BufferedWriter(opw);
+                JSONObject js=new JSONObject();
+                try {
+                    js.put("userId",userId);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                writer.write(String.valueOf(js));
+                writer.flush();
+                writer.close();
+
+                connection.connect();
                 InputStream is = connection.getInputStream();
                 InputStreamReader inputStreamReader = new InputStreamReader(is);
                 BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -80,18 +97,12 @@ public class IntegralActivity extends AppCompatActivity {
                 //解析JSon格式
                 try {
                     JSONObject object = new JSONObject(res);
-                    //头像
-                    String user_image = "http://10.7.89.189.8080"+object.getString("user_image");
-                    Bitmap bitmap= BitmapFactory.decodeStream(new URL(user_image).openStream());
-                    ivImage.setImageBitmap(bitmap);
-
                     //积分
-                    int score = object.getInt("user_score");
-                    tvScore.setText(String.valueOf(score));
+                    score = object.getInt("user_score");
 
                     //任务和番茄
-                    int num1 = object.getInt("num1");
-                    int num2 = object.getInt("num2");
+                    num1 = object.getInt("num1");
+                    num2 = object.getInt("num2");
                     for(int i=0;i<num1;i++){
                         Goods goods = new Goods();
                         goods.setName(object.getString("task_name["+i+"]"));
@@ -120,6 +131,8 @@ public class IntegralActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Object o) {
             ListView listView = findViewById(R.id.lv_task);
+            Log.e("11","11");
+            tvScore.setText(String.valueOf(score));
             //创建自定义Adapter对象
             CustomAdapter customAdapter = new CustomAdapter(IntegralActivity.this,list,R.layout.activity_list);
             //绑定adapter

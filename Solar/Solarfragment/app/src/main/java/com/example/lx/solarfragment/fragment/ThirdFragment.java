@@ -1,29 +1,20 @@
 package com.example.lx.solarfragment.fragment;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.lx.solarfragment.MainActivity;
 import com.example.lx.solarfragment.R;
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.LegendEntry;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.github.mikephil.charting.utils.Utils;
-import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +30,6 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -48,6 +38,7 @@ import java.util.List;
 public class ThirdFragment extends BaseFragment {
     private Button btn;
     private  View view;
+    private Button btnWeek;
     private Button btnMonth;
     private Button btnYear;
     private static LineChart chart;
@@ -56,15 +47,17 @@ public class ThirdFragment extends BaseFragment {
     private static TextView tv2;
     private static TextView tv3;
 
+    @SuppressLint("ResourceAsColor")
     public View initView(){
         if(view==null){
             view=View.inflate(mainActivity,R.layout.thirdfragment_layout,null);//上下文，要加载的布局，父组件
             chart=view.findViewById(R.id.linechart);
             Button btnTime=view.findViewById(R.id.btn);
-            btnTime.setTextColor(Color.GREEN);
             tv1=view.findViewById(R.id.tv1);
             tv2=view.findViewById(R.id.tv2);
             tv3=view.findViewById(R.id.tv3);
+            btnWeek=view.findViewById(R.id.week);
+            btnWeek.setBackgroundResource(R.drawable.sun3);
             btn=(Button) view.findViewById(R.id.btn2);
 
             btn.setOnClickListener(new View.OnClickListener() {

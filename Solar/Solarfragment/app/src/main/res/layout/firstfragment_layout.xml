@@ -1,54 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/tomato_back2"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg4">
-    <Button
-        android:id="@+id/btn_more"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/index_more"/>
+    android:layout_height="match_parent">
+    <!--android:background="@drawable/bg4"-->
 
 
 
-    <TextView
-        android:layout_marginTop="230dp"
-        android:layout_marginLeft="80dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="番茄个数："
-        android:textSize="25sp"/>
-    <TextView
-        android:layout_marginTop="230dp"
-        android:layout_marginLeft="270dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="个"
-        android:textSize="25sp"/>
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
         <Button
-            android:id="@+id/start"
-            android:layout_marginTop="300dp"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:text="开始"
-            android:background="@drawable/circle"/>
+            android:id="@+id/btn_more"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/details1"/>
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="目标番茄个数："
+            android:textColor="#000"
+            android:textSize="30sp"/>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </Spinner>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="个"
+                android:textColor="#000"
+                android:textSize="25sp"/>
+
+        </LinearLayout>
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="50dp"-->
+            <!--android:background="#000"-->
+            <!--android:textColor="#FFF"-->
+            <!--android:text="番茄工作法是简单易行的时间管理方法，是由弗朗西斯科·西里洛于1992年创立的一种相对于GTD更微观的时间管理方法。-->
+<!--使用番茄工作法，选择一个待完成的任务，将番茄时间设为25分钟，专注工作，中途不允许做任何与该任务无关的事，直到番茄时钟响起，然后在纸上画一个X短暂休息一下（5分钟就行），每4个番茄时段多休息一会儿。-->
+<!--番茄工作法极大地提高了工作的效率，还会有意想不到的成就感。" />-->
+
     </LinearLayout>
 
+    <Button
+        android:layout_marginTop="40dp"
+        android:id="@+id/start"
+        android:layout_centerHorizontal="true"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/start2"/>
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_marginLeft="190dp"
-        android:layout_marginTop="240dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </Spinner>
 </RelativeLayout>

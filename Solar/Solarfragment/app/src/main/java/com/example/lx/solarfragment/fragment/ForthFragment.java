@@ -16,7 +16,6 @@ public class ForthFragment extends BaseFragment {
         if(view==null){
             view=View.inflate(mainActivity,R.layout.forthfragment_layout,null);
             Button btn1=view.findViewById(R.id.btn4);
-            btn1.setTextColor(Color.GREEN);
             btn=(Button) view.findViewById(R.id.btn3);
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override

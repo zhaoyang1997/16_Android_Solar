@@ -8,16 +8,32 @@
     android:layout_height="match_parent"
     tools:context=".ClockActivity">
 
-    <ImageView
-        android:id="@+id/clock_back_left"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:src="@drawable/back_left"/>
+    <LinearLayout
+        android:id="@+id/temp_ll"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#000">
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/clock_back_left"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/left"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:text="番茄时间"/>
+    </LinearLayout>
 
     <!--创建很多时钟-->
 
     <ScrollView
-        android:layout_below="@+id/clock_back_left"
+        android:layout_below="@+id/temp_ll"
         android:id="@+id/sv_many_clock"
         android:orientation="vertical"
         android:layout_width="match_parent"

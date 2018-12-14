@@ -1,22 +1,17 @@
 package com.example.lx.solarfragment;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.lx.solarfragment.fragment.SecondFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,7 +23,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -44,7 +38,8 @@ public class AddTaskActivity extends AppCompatActivity {
     private String Year;
     private String Month;
     private String Day;
-    private Button back;
+    private ImageView back;
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +47,7 @@ public class AddTaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_task);
         taskName=findViewById(R.id.taskname);
         taskTime=findViewById(R.id.tasktime);
+        userId=getIntent().getIntExtra("userId",0);
         finish=findViewById(R.id.finish);
 
         finish.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +121,7 @@ public class AddTaskActivity extends AppCompatActivity {
 
                             js.put("Tmonth",Month);
                             js.put("Tday",Day);
+                            js.put("userid",userId);
 
                             Log.e("Task",String.valueOf(js));
                             //将JSON封装成字符串格式
@@ -160,12 +157,11 @@ public class AddTaskActivity extends AppCompatActivity {
             Log.e("what","111111");
             switch (msg.what){
                 case 1:
-                        AddTaskActivity.this.finish();
-//                    Intent intent = new Intent();
-//                    intent.setClass(AddTaskActivity.this,
-//                            MainActivity.class);
-//
-//                    startActivity(intent);
+                    Intent intent = new Intent();
+                    intent.setClass(AddTaskActivity.this,
+                            TaskActivity.class);
+                    intent.putExtra("userId",userId);
+                    startActivity(intent);
                     break;
                 case 2:
 

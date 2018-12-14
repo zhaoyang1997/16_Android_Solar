@@ -5,61 +5,62 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/back_left" />
+        android:layout_height="45dp"
+        android:background="#000">
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/iv_back_eft"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/left"/>
         <TextView
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="积分详情"
-            android:textSize="25sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="110dp"/>
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:text=" 积分详情"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:orientation="horizontal"
-        android:background="@drawable/a"
-        android:layout_marginTop="10dp">
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
+
         <ImageView
-            android:id="@+id/iv_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/user_head"
-            android:layout_marginLeft="40dp"/>
-        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/money"/>
+        <TextView
+            android:id="@+id/tv_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="70dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="当前积分："
-                android:textSize="20sp"/>
-            <TextView
-                android:id="@+id/tv_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="20sp"
-                android:layout_marginLeft="5dp"/>
-        </LinearLayout>
+            android:layout_marginTop="8dp"
+            android:text="0积分"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_line"/>
+
     </LinearLayout>
+
     <ListView
         android:id="@+id/lv_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
     </ListView>
+
 
 </LinearLayout>

@@ -1,20 +1,19 @@
 package com.example.lx.solarfragment;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
 public class SettingActivity extends AppCompatActivity {
 
-
+    ImageView leftback;
     LinearLayout sing1;
     LinearLayout sing2;
     LinearLayout sing3;
@@ -23,13 +22,20 @@ public class SettingActivity extends AppCompatActivity {
     TextView tv1;
     TextView tv2;
     TextView tv3;
-    TextView back;
     private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
+        leftback = findViewById(R.id.back);
+        leftback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SettingActivity.this.finish();
+            }
+        });
 
         sing1=findViewById(R.id.sing1);
         sing2=findViewById(R.id.sing2);

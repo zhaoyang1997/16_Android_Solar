@@ -4,32 +4,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MartActivity">
 
-
     <LinearLayout
-        android:layout_gravity="center"
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp">
+        android:layout_height="45dp"
+        android:background="#000">
         <ImageView
-            android:id="@+id/iv_back_eft"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
             android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:src="@drawable/back_left"/>
+            android:id="@+id/iv_back_eft"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/left"/>
         <TextView
-            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="23sp"
-            android:text="积分商城"/>
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:text=" 积分商城"/>
     </LinearLayout>
 
     <GridView

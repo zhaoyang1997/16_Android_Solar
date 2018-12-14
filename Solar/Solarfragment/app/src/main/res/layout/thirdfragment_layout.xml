@@ -4,61 +4,68 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <!--数据页面 时间布局-->
-    <Button
-        android:id="@+id/btn"
-        android:layout_marginTop="10dp"
+    <RelativeLayout
+        android:id="@+id/ll_top"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:text="时间"
-        android:textSize="10sp"
-        android:background="#00000000"/>
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间"
+            android:textColor="@color/text_orange"
+            android:textSize="10sp"
+            android:background="#00000000"/>
 
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/btn"
-        android:layout_toRightOf="@id/btn"
-        android:text="应用"
-        android:textSize="10sp"
-        android:background="#00000000"/>
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/btn"
+            android:layout_toRightOf="@id/btn"
+            android:text="应用"
+            android:textSize="10sp"
+            android:background="#00000000"/>
+
+    </RelativeLayout>
 
 
     <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:id="@+id/ll_btn"
         android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_below="@id/btn">
+        android:layout_below="@id/ll_top">
         <ImageView
+            android:layout_marginLeft="15dp"
             android:layout_alignLeft="@id/week"
-            android:layout_marginLeft="10dp"
             android:layout_alignTop="@id/week"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="15dp"
             android:layout_width="150dp"
             android:layout_height="5dp"
             android:src="@drawable/select"/>
         <Button
-            android:layout_marginLeft="100dp"
             android:id="@+id/week"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/point_out"/>
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/sun2"/>
 
         <Button
             android:layout_toRightOf="@id/week"
             android:layout_marginLeft="40dp"
             android:id="@+id/month"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/point_out"/>
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/sun2"/>
         <Button
             android:id="@+id/year"
             android:layout_toRightOf="@id/month"
             android:layout_marginLeft="40dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/point_out"/>
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/sun2"/>
         <TextView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -85,8 +92,7 @@
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="280dp"
-        android:layout_below="@id/btn"
-        android:layout_marginTop="60dp">
+        android:layout_below="@id/ll_btn">
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/linechart"
             android:layout_width="match_parent"
@@ -100,7 +106,7 @@
             android:id="@+id/star"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/star_green"
+            android:src="@drawable/sun"
             android:layout_marginLeft="30dp"/>
         <TextView
             android:id="@+id/title1"
@@ -108,7 +114,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="过去一周"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="@color/text_orange"/>
         <TextView
             android:id="@+id/tv1"
             android:layout_alignLeft="@id/star"
@@ -117,7 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="专注了0个番茄时间"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/tv2"
             android:layout_alignLeft="@id/star"
@@ -126,7 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="完成了0个任务"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/tv3"
             android:layout_alignLeft="@id/star"
@@ -135,7 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="未完成0个任务"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
 
 
     </RelativeLayout>

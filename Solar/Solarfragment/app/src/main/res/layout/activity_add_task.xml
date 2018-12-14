@@ -6,25 +6,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AddTaskActivity">
+
     <LinearLayout
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
-        <Button
+        android:layout_height="45dp"
+        android:background="#000">
+        <ImageView
+            android:layout_marginLeft="10dp"
             android:id="@+id/back"
-            android:background="@drawable/back_left"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="10dp"/>
+            android:src="@drawable/left"/>
         <TextView
-            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="10dp"
-            android:text="新建任务"
-            android:textSize="20sp"/>
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:text=" 新建任务"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

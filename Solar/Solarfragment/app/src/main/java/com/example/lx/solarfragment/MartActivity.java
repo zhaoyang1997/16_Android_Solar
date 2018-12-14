@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-
 import com.example.lx.solarfragment.adapter.MartAdapter;
 import com.example.lx.solarfragment.bean.Buy;
 import com.example.lx.solarfragment.bean.MyImg;
@@ -20,10 +19,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -61,7 +58,7 @@ public class MartActivity extends AppCompatActivity {
         @Override
         protected Object doInBackground(Object[] objects) {
             try {
-                URL url = new URL("http://10.7.89.78:8080/data_get/ImgServlet");
+                URL url = new URL("http://10.7.89.187:8080/Solar/ImgServlet");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
                 connection.setRequestProperty("contentType","UTF-8");

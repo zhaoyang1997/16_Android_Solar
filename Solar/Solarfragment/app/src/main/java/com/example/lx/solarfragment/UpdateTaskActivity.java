@@ -1,10 +1,10 @@
 package com.example.lx.solarfragment;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -12,9 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.example.lx.solarfragment.bean.Task;
-import com.example.lx.solarfragment.fragment.SecondFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +34,7 @@ public class UpdateTaskActivity extends AppCompatActivity {
     private EditText taskTime;
     private Button finish;
     private String Tname;
-    private int Ttime;
+    private String Ttime;
     private String Year;
     private String Month;
     private String Day;
@@ -46,7 +43,8 @@ public class UpdateTaskActivity extends AppCompatActivity {
     private String TaskName;
     private int TaskTime;
     private  Bundle bundle;
-    private Button back;
+    private ImageView back;
+    private int userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,48 +52,31 @@ public class UpdateTaskActivity extends AppCompatActivity {
         taskName = findViewById(R.id.taskname);
         taskTime = findViewById(R.id.tasktime);
         finish = findViewById(R.id.finish);
-        back = findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UpdateTaskActivity.this.finish();
-            }
-        });
-        final Task task3=(Task) getIntent().getSerializableExtra("Task");
-        taskName.setText(task3.getTaskName());
-        taskTime.setText(task3.getDateTime()+"");
-
-        TaskState=task3.getTaskState();
-        Log.e("任务状态",TaskState);
-        TaskId=task3.getTaskId();
-        TaskName=task3.getTaskName();
-        TaskTime=task3.getDateTime();
+        //获得修改按钮跳转的响应
+        final Intent i = getIntent();
+        bundle = i.getExtras();
+        TaskId = bundle.getInt("TaskId");
+        TaskName = bundle.getString("TaskName");
+        TaskTime = bundle.getInt("TaskTime");
+        userId=bundle.getInt("userId");
+        Log.e("时间", String.valueOf(bundle.getInt("TaskTime")));
+        taskName.setText(TaskName);
+        taskTime.setText(String.valueOf(TaskTime));
 
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
                 Tname = taskName.getText().toString();
-                Ttime = Integer.parseInt(taskTime.getText().toString());//获取int类型的值
+                Ttime = taskTime.getText().toString();
                 Year = getYear();
                 Month = getMonth();
                 Day = getDay();
 
                 UpdateTask();
-
-                Intent intent = new Intent();
-                Task task2 = new Task(Tname, Ttime,TaskState);
-                intent.putExtra("responseTask", task2);
-                intent.putExtra("index", getIntent().getIntExtra("index", 0));
-                //返回响应的数据
-                setResult(200, intent);
-                //结束当前的Activity
-                finish();
             }
         });
     }
-
         //获得点击事件的年月日
     private String getYear(){
         SimpleDateFormat sdf =new SimpleDateFormat("yyy");
@@ -131,7 +112,7 @@ public class UpdateTaskActivity extends AppCompatActivity {
                     final Message message = Message.obtain();
 
                     //判断如果修改的内容和时间为空时，给出弹框
-                    if(Tname.equals("")|| Ttime==0){
+                    if(Tname.equals("")|| Ttime.equals("")){
                         message.what=2;
                         handler.sendMessage(message);
                     }else{
@@ -143,7 +124,7 @@ public class UpdateTaskActivity extends AppCompatActivity {
                         js.put("Tyear",Year);
                         js.put("Tmonth",Month);
                         js.put("Tday",Day);
-                        js.put("Tstate",TaskState);
+
                         Log.e("Task",String.valueOf(js));
                         //将JSON封装成字符串格式
                         writer.write(String.valueOf(js));
@@ -176,7 +157,9 @@ public class UpdateTaskActivity extends AppCompatActivity {
             Log.e("what","111111");
             switch (msg.what){
                 case 1:
-                    UpdateTaskActivity.this.finish();
+                    Intent intent=new Intent(UpdateTaskActivity.this,TaskActivity.class);
+                    intent.putExtra("userId",userId);
+                    startActivity(intent);
                     break;
                 case 2:
 

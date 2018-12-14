@@ -2,12 +2,12 @@ package com.example.lx.solarfragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,6 +30,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    private Button back;
     private EditText name;
     private EditText pwd;
     private EditText qpwd;
@@ -49,6 +50,15 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        back = findViewById(R.id.btn_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RegisterActivity.this.finish();
+            }
+        });
+
         name=findViewById(R.id.username);
         pwd=findViewById(R.id.password);
         el=findViewById(R.id.email);
@@ -62,9 +72,10 @@ public class RegisterActivity extends AppCompatActivity {
     public  void register(){
         register=findViewById(R.id.register);
         register.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-
+                register.setTextColor(R.color.text_orange);
                 username=name.getText().toString();
                 password=pwd.getText().toString();
                 email=el.getText().toString();
@@ -202,6 +213,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.LENGTH_LONG)
 
                                 .show();
+                        register.setTextColor(Color.rgb(0,0,0));
 
                         break;
 
@@ -211,9 +223,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 "您输入的密码长度必须大于6个字符",
 
-                                Toast.LENGTH_LONG)
+                                Toast.LENGTH_SHORT)
 
                                 .show();
+                        register.setTextColor(Color.rgb(0,0,0));
 
                         break;
 
@@ -223,9 +236,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 "两次密码输入不一致，请重新输入",
 
-                                Toast.LENGTH_LONG)
+                                Toast.LENGTH_SHORT)
 
                                 .show();
+                        register.setTextColor(Color.rgb(00,00,00));
 
                         break;
 
@@ -235,9 +249,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 "亲，您所输入的手机号码格式有误哦~",
 
-                                Toast.LENGTH_LONG)
+                                Toast.LENGTH_SHORT)
 
                                 .show();
+                        register.setTextColor(Color.rgb(0,0,0));
 
                         break;
 
@@ -247,36 +262,38 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 "该用户名已被注册",
 
-                                Toast.LENGTH_LONG)
+                                Toast.LENGTH_SHORT)
 
                                 .show();
+                        register.setTextColor(Color.rgb(0,0,0));
 
                         break;
                     case 6:
                         Toast.makeText(getApplicationContext(),
                                 "邮箱格式输入不正确",
-                                Toast.LENGTH_LONG)
+                                Toast.LENGTH_SHORT)
                                 .show();
+                        register.setTextColor(Color.rgb(0,0,0));
                         break;
 
                     case 7:
 
                         Log.e("chuce","chuce");
-                        //页面跳转
+                      //  页面跳转
 
-                        //1. 创建Intent对象
+                      //  1. 创建Intent对象
 
-                     //   Intent intent = new Intent();
+                        Intent intent = new Intent();
 
-                        //2. 指定跳转路线
+                     //   2. 指定跳转路线
 
-                     //   intent.setClass(RegisterActivity.this,
+                        intent.setClass(RegisterActivity.this,
 
-                        //        LoginActivity.class);
+                                LoginActivity.class);
 
-                        //3. 进行跳转
+                      //  3. 进行跳转
 
-                      //  startActivity(intent);
+                        startActivity(intent);
 
                         break;
 

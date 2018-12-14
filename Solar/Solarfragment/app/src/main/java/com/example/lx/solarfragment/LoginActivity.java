@@ -1,25 +1,18 @@
 package com.example.lx.solarfragment;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.lx.solarfragment.fragment.FirstFragment;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText loginname;
     private EditText pwd;
-    private Button   login;
+    private Button login;
     private String lname;
     private String password;
     private Button btnBack;
@@ -50,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        btnBack=findViewById(R.id.back);
         btnForget=findViewById(R.id.btn_forget);
         btnNew=findViewById(R.id.newregister);
         btnForget.setOnClickListener(new View.OnClickListener() {
@@ -65,12 +57,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
-            }
-        });
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               LoginActivity.this.finish();
             }
         });
         loginname=findViewById(R.id.login_name);
@@ -206,7 +192,7 @@ public class LoginActivity extends AppCompatActivity {
                         // 显示Toast
                         toast.show();
                         //  封装    携带数据到另一个页面
-                        Intent intent=new Intent(LoginActivity.this,MyActivity.class);
+                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                         intent.putExtra("userName",lname);
                         intent.putExtra("userId",userId);
                         startActivity(intent);

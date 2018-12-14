@@ -1,160 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg1"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#000">
+        <Button
+            android:id="@+id/btn_back"
+            android:background="@drawable/left"
+            android:layout_marginLeft="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:text=" S O L A R"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_back"
-        android:background="@drawable/back_left"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"/>
     <TextView
-        android:textColor="#FFFFFF"
+        android:id="@+id/temp_tv"
+        android:textColor="#000"
+        android:layout_below="@+id/ll_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="35dp"
         android:text="用户注册"
         android:textSize="30sp"/>
 
     <LinearLayout
-
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/temp_tv"
+        android:orientation="vertical"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="昵称"
-            android:textColor="#ffffff"/>
         <EditText
             android:id="@+id/username"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_shape"
             android:textSize="20sp"
-            android:hint="例如：李晨"
-            android:textColorHint="#ffffff" />
+            android:lines="1"
+            android:inputType="text"
+            android:hint="用户名"
+            android:textColorHint="#808080" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="6dp">
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="手机号"
-            android:textColor="#ffffff"/>
         <EditText
             android:id="@+id/phone"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/circle_shape"
+            android:textSize="20sp"
+            android:lines="1"
+            android:inputType="text"
             android:hint="请填写手机号"
-            android:textColorHint="#ffffff"/>
+            android:textColorHint="#808080"/>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="6dp">
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="邮箱"
-            android:textSize="20dp"
-            android:textColor="#ffffff"/>
         <EditText
             android:id="@+id/email"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/circle_shape"
+            android:textSize="20sp"
+            android:lines="1"
+            android:inputType="text"
             android:hint="请填写邮箱"
-            android:textColorHint="#ffffff"/>
+            android:textColorHint="#808080"/>
 
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="6dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="密码"
-            android:textSize="20dp"
-            android:textColor="#ffffff"/>
         <EditText
             android:id="@+id/password"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"
-            android:password="true"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/circle_shape"
+            android:textSize="20sp"
+            android:lines="1"
+            android:inputType="textPassword"
             android:hint="请填写密码"
-            android:textColorHint="#ffffff"/>
+            android:textColorHint="#808080"/>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="6dp"
-        android:orientation="horizontal">
-        <TextView
-
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="确认密码"
-            android:textSize="20dp"
-            android:textColor="#ffffff"/>
         <EditText
             android:id="@+id/qpassword"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"
-            android:password="true"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/circle_shape"
+            android:textSize="20sp"
+            android:lines="1"
+            android:inputType="textPassword"
             android:hint="请确认密码"
-            android:textColorHint="#ffffff"/>
-
+            android:textColorHint="#808080"/>
 
     </LinearLayout>
-    <Button
 
+    <Button
         android:id="@+id/register"
-        android:textColor="#ffffff"
-        android:layout_width="match_parent"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="35dp"
+        android:layout_alignParentBottom="true"
         android:text="注册"
         android:textSize="30sp"
-        android:background="#0000"/>
+        android:background="@drawable/btn_style"/>
 
-</LinearLayout>
+</RelativeLayout>
 
 
 

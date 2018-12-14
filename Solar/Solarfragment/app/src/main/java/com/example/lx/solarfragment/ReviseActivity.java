@@ -27,7 +27,7 @@ public class ReviseActivity extends AppCompatActivity {
 
     Button button;
     EditText etPassword,etCpassword;
-    TextView tvPassword,tvCpassword;
+    TextView tvCpassword;
     String password,cpassword;
     private Button btnBack;
     @Override
@@ -37,7 +37,6 @@ public class ReviseActivity extends AppCompatActivity {
         button=findViewById(R.id.btn);
         etPassword=findViewById(R.id.et_password);
         etCpassword=findViewById(R.id.et_cpassword);
-        tvPassword = findViewById(R.id.tv_password);
         tvCpassword = findViewById(R.id.tv_cpassword);
         btnBack=findViewById(R.id.btn_back);
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +71,7 @@ public class ReviseActivity extends AppCompatActivity {
                 return false;
             }
         }else {
-            tvPassword.setText("密码不能为空");
+            tvCpassword.setText("密码不能为空");
             return false;
         }
     }

@@ -1,7 +1,6 @@
 package com.example.lx.solarfragment;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,11 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.lx.solarfragment.fragment.SecondFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,6 +48,7 @@ public class StartTimeActivity extends AppCompatActivity {
     private String TaskName;
     private int TaskTime;
     private  Bundle bundle;
+    private int userId;
     private Handler timeHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -137,7 +133,7 @@ public class StartTimeActivity extends AppCompatActivity {
         TextView textView=findViewById(R.id.task_name1);
         textView.setText(TaskName);
         TaskTime= bundle.getInt("TaskTime");
-
+        userId=bundle.getInt("userId");
         Log.e("时间", String.valueOf(bundle.getInt("TaskTime")));
 
 
@@ -228,16 +224,17 @@ public class StartTimeActivity extends AppCompatActivity {
 
                                     intent.setClass(StartTimeActivity.this,
 
-                                            SecondFragment.class);
+                                            TaskActivity.class);
                                     //3. 进行跳转
 
+                                    intent.putExtra("userId",userId);
                                     startActivity(intent);
 
                                 }else if(items[i].equals("提前完成计时")){
                                     new Thread(){
                                         @Override
                                         public void run() {
-                                            String path="http://10.7.90.220:8080/Solar/UpdateTaskStateServlet";
+                                            String path="http://10.7.89.187:8080/Solar/UpdateTaskStateServlet";
                                             try {
                                                 URL url =new URL(path);
                                                 HttpURLConnection Connection=(HttpURLConnection) url.openConnection();
@@ -250,7 +247,7 @@ public class StartTimeActivity extends AppCompatActivity {
                                                 JSONObject js=new JSONObject();
                                                 js.put("TaskId",TaskId);
                                                 js.put("TaskTime",TaskTime);
-                                                js.put("userId",1);
+                                                js.put("userId",userId);
                                                 writer.write(String.valueOf(js));
                                                 writer.flush();
                                                 writer.close();
@@ -283,7 +280,7 @@ public class StartTimeActivity extends AppCompatActivity {
 
                                     intent.setClass(StartTimeActivity.this,
 
-                                            SecondFragment.class);
+                                            TaskActivity.class);
                                     //3. 进行跳转
 
                                     startActivity(intent);

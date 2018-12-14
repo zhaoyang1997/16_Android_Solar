@@ -3,69 +3,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg1"
     tools:context=".ReviseActivity"
     android:orientation="vertical">
+
     <LinearLayout
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="45dp"
+        android:background="#000">
         <Button
+            android:layout_marginLeft="10dp"
             android:id="@+id/btn_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/back_left"/>
+            android:background="@drawable/left"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:text=" S O L A R"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:orientation="vertical"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="新密码："
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"/>
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:text="重置密码"/>
+
         <EditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginRight="30dp"
-            android:textColor="#FFFFFF"/>
-        <TextView
-            android:id="@+id/tv_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="确认密码："
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"/>
+            android:layout_marginTop="30dp"
+            android:hint="新密码"
+            android:background="@drawable/circle_shape"
+            android:paddingLeft="10dp"
+            android:lines="1"
+            android:inputType="textPassword"
+            android:textColorHint="#808080"
+            android:textColor="#000"/>
+
         <EditText
             android:id="@+id/et_cpassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_shape"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="30dp"
-            android:textColor="#FFFFFF"/>
+            android:paddingLeft="10dp"
+            android:hint="确认密码"
+            android:lines="1"
+            android:inputType="textPassword"
+            android:textColorHint="#808080"
+            android:textColor="#000"/>
+
         <TextView
             android:id="@+id/tv_cpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#FF0000" />
+
     </LinearLayout>
     <Button
         android:id="@+id/btn"
-        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:text="确认"
-        android:textColor="#6c6c6c"
+        android:background="@drawable/btn_style"
+        android:textColor="#000"
         android:textSize="25sp"/>
 </LinearLayout>
