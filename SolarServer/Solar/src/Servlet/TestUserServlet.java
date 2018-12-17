@@ -41,13 +41,17 @@ public class TestUserServlet extends HttpServlet {
 		InputStreamReader inputStreamReader = new InputStreamReader(is);
         BufferedReader reader = new BufferedReader(inputStreamReader);
         String res = reader.readLine();
-        JSONObject jsonObject = new JSONObject(res);
+        if(res==null) {
+        	System.out.println("没数据输入");
+        }else {
+        JSONObject js = new JSONObject(res);
         UserBean user = new UserBean();
-        user.setName(jsonObject.getString("userName"));
+        user.setName(js.getString("userName"));
+        System.out.println(user.getName());
 		UserDao userDao = new UserDao();	
-		userDao.getUser(user);
+		user=userDao.getUser(user);
 		//将数据编码格式成JSon格式	
-		JSONObject js = new JSONObject();
+		js = new JSONObject();
 		js.put("name",user.getName());
 		js.put("phone", user.getTelephone());
 		js.put("email", user.getEmail());
@@ -55,7 +59,7 @@ public class TestUserServlet extends HttpServlet {
 		System.out.println(user.getEmail());
 		response.getWriter().append(js.toString()).append(request.getContextPath());
 
-	}
+	}}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

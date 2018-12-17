@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 import Dao.TomatoDao;
+import Dao.UserDao;
 
 /**
  * Servlet implementation class TomatoServlet
@@ -44,8 +45,13 @@ public class TomatoServlet extends HttpServlet {
         if(res!= null) {
         	System.out.println(res);
         	JSONObject obj=new JSONObject(res);
+        	UserDao userDao = new UserDao();
         	int userId = obj.getInt("user_id");
+        	int score=userDao.SelectscoreByuserId(userId);
+        	int newScore =0;
         	int num = obj.getInt("num");
+        	newScore=score+num*5;
+        	userDao.UpdateUserById(userId, newScore);
         	String year = obj.getString("year");
         	String month = obj.getString("month");
         	String day = obj.getString("day");

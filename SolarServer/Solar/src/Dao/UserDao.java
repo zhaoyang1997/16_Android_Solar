@@ -94,8 +94,6 @@ public class UserDao {
 		}
 		
 	}
-		
-	
 	/**
 	 * 通过userName查userId*/
 	
@@ -342,6 +340,7 @@ public class UserDao {
 				userBean.setName(rs.getString("user_name"));
 				userBean.setTelephone(rs.getString("user_phone"));
 				userBean.setEmail(rs.getString("user_email"));
+				System.out.println(userBean.getEmail());
 				userBean.setPassword(rs.getString("user_password"));
 				userBean.setUser_score(rs.getInt("user_score"));
 				userBean.setUser_image(rs.getString("user_image"));
@@ -392,8 +391,9 @@ public class UserDao {
 			e.printStackTrace();
 			}
 		}
+	
 
-	}
+}
 
 
 

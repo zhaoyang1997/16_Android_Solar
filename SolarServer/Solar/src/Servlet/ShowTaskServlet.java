@@ -44,13 +44,16 @@ public class ShowTaskServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		
-//        if(res==null) {
-//        	System.out.println("没有数据传入");
-//        	
-//        }else {
+		InputStream is=request.getInputStream();	
+		InputStreamReader inputStreamReader = new InputStreamReader(is);
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        String res = reader.readLine();
+        if(res==null) {
+        	System.out.println("没数据输入");
+        }else {
+        JSONObject js = new JSONObject(res);
 			UserBean user=new UserBean();
-			user.setId(1);
+			user.setId(js.getInt("user_id"));
         	
     		TaskDao td=new TaskDao();
     		//返回的是一个Task列表
@@ -67,8 +70,9 @@ public class ShowTaskServlet extends HttpServlet {
     			obj1.put("taskState",i.getTaskState());
     			array.put(obj1);}
     		response.getWriter().append(array.toString()).append(request.getContextPath());
-			
+    		
 		}
+	}
 		
 		
 	

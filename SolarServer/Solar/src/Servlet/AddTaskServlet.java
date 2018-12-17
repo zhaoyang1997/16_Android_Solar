@@ -54,6 +54,7 @@ public class AddTaskServlet extends HttpServlet {
         	JSONObject js=new JSONObject(res);
         	TaskBean task=new TaskBean();
         	task.setTaskName(js.getString("Tname"));
+        	int userId = js.getInt("userid");
         	System.out.println(task.getTaskName());
         	task.setDateTime(js.getInt("Ttime"));
         	System.out.println(task.getDateTime());
@@ -63,11 +64,10 @@ public class AddTaskServlet extends HttpServlet {
     
         	//首先要查到用户的UserID--根据username查
         	//先设为固定
-        	int userID=1;
         	TaskDao td=new TaskDao();
         	
         	//添加到显示表
-        	td.insertTask(userID,task.getTaskName(),task.getDateTime(),task.getYear(),task.getMonth(),task.getDay());
+        	td.insertTask(userId,task.getTaskName(),task.getDateTime(),task.getYear(),task.getMonth(),task.getDay());
         	
         	response.sendRedirect("ShowTaskServlet");
         	writer.write("添加任务成功");
