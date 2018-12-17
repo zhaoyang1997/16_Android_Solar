@@ -34,13 +34,13 @@ public class TomatoDao {
 	Connection conn = Datebase.getConnection();
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
-	//查询所有番茄记录
+	//后台查询所有番茄记录
 	public List<TomatoBean> getAllTomato() {
 		List<TomatoBean> TomatoList = new ArrayList<TomatoBean>();
 		Connection conn = Datebase.getConnection();
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String sql = "select tomato_id,user_id,tomato_num,tomato_year,tomato_month,tomato_day,tomato_score from tomato";
+		String sql = "select tomato_id,user_id,tomato_num,tomato_year,tomato_month,tomato_day from tomato";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -134,28 +134,28 @@ public class TomatoDao {
 		  *  前台查询用户番茄的信息
 		 * @return
 		 */
-		public List<TomatoBean> findTTomato(int userid){
-			try {
-				Connection connection = Datebase.getConnection();
-				List<TomatoBean> list = new ArrayList<>();
-				String sql = "select tomato_num,tomato_score from tomato where user_id = ?";
-				PreparedStatement ps = connection.prepareStatement(sql);
-				ps.setInt(1, userid);
-				ResultSet rs = ps.executeQuery();
-				
-				while(rs.next()) {
-					TomatoBean tomato = new TomatoBean();
-					tomato.setTomatoName("完成"+rs.getInt("tomato_num")+"个番茄时间");
-					tomato.setTomato_score(rs.getInt("tomato_score"));
-					list.add(tomato);
-				}
-				return list;
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				return null;
-			}
-		}
+//		public List<TomatoBean> findTTomato(int userid){
+//			try {
+//				Connection connection = Datebase.getConnection();
+//				List<TomatoBean> list = new ArrayList<>();
+//				String sql = "select tomato_num from tomato where user_id = ?";
+//				PreparedStatement ps = connection.prepareStatement(sql);
+//				ps.setInt(1, userid);
+//				ResultSet rs = ps.executeQuery();
+//				
+//				while(rs.next()) {
+//					TomatoBean tomato = new TomatoBean();
+//					tomato.setTomatoName("完成"+rs.getInt("tomato_num")+"个番茄时间");
+//					tomato.setTomato_score(rs.getInt("tomato_score"));
+//					list.add(tomato);
+//				}
+//				return list;
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//				return null;
+//			}
+//		}
 	
 
 }

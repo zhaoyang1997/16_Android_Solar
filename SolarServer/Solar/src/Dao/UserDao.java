@@ -327,17 +327,18 @@ public class UserDao {
 		return UserList;
 	}
 	/**
-	 * 查询用户数据
+	 * 密码问题页面查询用户数据
 	 * @return
 	 */
 	public UserBean getUser(UserBean user) {
 		userBean = new UserBean();
-		String sql = "select * from user where user_id = ?";
+		String sql = "select * from user where user_name = ?";
 		try {
 		    pstmt = conn.prepareStatement(sql);
-		    pstmt.setInt(1,user.getId());
+		    pstmt.setString(1,user.getName());
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
+				userBean.setId(rs.getInt("user_id"));
 				userBean.setName(rs.getString("user_name"));
 				userBean.setTelephone(rs.getString("user_phone"));
 				userBean.setEmail(rs.getString("user_email"));

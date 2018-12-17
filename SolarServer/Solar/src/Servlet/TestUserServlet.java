@@ -43,7 +43,7 @@ public class TestUserServlet extends HttpServlet {
         String res = reader.readLine();
         JSONObject jsonObject = new JSONObject(res);
         UserBean user = new UserBean();
-        user.setId(jsonObject.getInt("userId"));
+        user.setName(jsonObject.getString("userName"));
 		UserDao userDao = new UserDao();	
 		userDao.getUser(user);
 		//将数据编码格式成JSon格式	
@@ -51,6 +51,7 @@ public class TestUserServlet extends HttpServlet {
 		js.put("name",user.getName());
 		js.put("phone", user.getTelephone());
 		js.put("email", user.getEmail());
+		js.put("userId", user.getId());
 		System.out.println(user.getEmail());
 		response.getWriter().append(js.toString()).append(request.getContextPath());
 
