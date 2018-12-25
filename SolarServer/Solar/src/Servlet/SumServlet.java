@@ -64,22 +64,23 @@ public class SumServlet extends HttpServlet {
 				if(date1==0) {
 					month1--;
 					if(month1==0) {
+						month1=12;
 						year1--;
 					}
 					if(month1==11||month1==9||month1==6||month1==4) {
-						date1=30;
+						date="30";
 					}else if(month1==2) {
 						if(((year1%4)==0&&(year1%100)!=0)||(year1%400==0)) {   
-							date1=28;
+							date="28";
 						}else {
-							date1=29;
+							date="29";
 						}
 					}else {
-						date1=31;
+						date="31";
 					}
 					
 				}
-				if(date1==9) {
+				else if(date1==9) {
 					date="09";
 				}else if(date1==8) {
 					date="08";
@@ -101,6 +102,7 @@ public class SumServlet extends HttpServlet {
 					date=String.valueOf(date1);
 				}
 				if(month1==1) {
+					
 					month="01";
 				}else if(month1==2) {
 					month="02";
@@ -147,22 +149,23 @@ public class SumServlet extends HttpServlet {
 				if(date1==0) {
 					month1--;
 					if(month1==0) {
+						month1=12;
 						year1--;
 					}
 					if(month1==11||month1==9||month1==6||month1==4) {
-						date1=30;
+						date="30";
 					}else if(month1==2) {
 						if(((year1%4)==0&&(year1%100)!=0)||(year1%400==0)) {   
-							date1=28;
+							date="28";
 						}else {
-							date1=29;
+							date="29";
 						}
 					}else {
-						date1=31;
+						date="31";
 					}
 					
 				}
-				if(date1==9) {
+				else if(date1==9) {
 					date="09";
 				}else if(date1==8) {
 					date="08";
@@ -230,11 +233,12 @@ public class SumServlet extends HttpServlet {
 				int month1=Integer.parseInt(month);
 				month1--;
 				if(month1==0) {
+					month="12";
 					int year1=Integer.parseInt(year);
 					year1--;
 					year=String.valueOf(year1);
 				}
-				if(month1==1) {
+				else if(month1==1) {
 					month="01";
 				}else if(month1==2) {
 					month="02";

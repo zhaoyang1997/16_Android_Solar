@@ -59,6 +59,7 @@ public class UpdateTaskServlet extends HttpServlet {
         	task.setDateTime(js.getInt("Ttime"));
         	System.out.println(task.getDateTime());
         	task.setYear(js.getString("Tyear"));
+        	
         	task.setMonth(js.getString("Tmonth"));
         	task.setDay(js.getString("Tday"));
         	TaskDao td=new TaskDao();

@@ -28,7 +28,24 @@ public class SumDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally
+		{
+			if(pstmt!= null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 		
+			if(conn!= null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
 		}
+
 		
 		return sumTomatoYear;
 	}
@@ -51,7 +68,24 @@ public class SumDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally
+		{
+			if(pstmt!= null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 		
+			if(conn!= null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
 		}
+
 		return sumTaskYear;
 	}
 	
@@ -73,7 +107,24 @@ public class SumDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally
+		{
+			if(pstmt!= null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 		
+			if(conn!= null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
 		}
+
 		return sumTaskYear;
 	}
 	
@@ -89,12 +140,31 @@ public class SumDao {
 			pstmt.setString(3, year);
 			pstmt.setInt(4, id);
 			ResultSet rs=pstmt.executeQuery();
+			int num=0;
 			while(rs.next()) {
 				sumTomato=rs.getInt("tomato_num");
+				sumTomato=sumTomato+num;
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
+		}finally
+		{
+			if(pstmt!= null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 		
+			if(conn!= null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
 		}
+
 		return sumTomato;
 	}
 	
@@ -116,7 +186,24 @@ public class SumDao {
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
+		}finally
+		{
+			if(pstmt!= null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 		
+			if(conn!= null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
 		}
+
 		return sumTask;
 	}
 	
@@ -138,7 +225,24 @@ public class SumDao {
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
+		}finally
+		{
+			if(pstmt!= null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 		
+			if(conn!= null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
 		}
+
 		return sumTask;
 	}
 }
